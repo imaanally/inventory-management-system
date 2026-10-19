@@ -198,6 +198,41 @@ Inventory items are currently stored in an in-memory Python list. Changes are no
 - Stock alerts for low inventory.
 - Improved reporting and inventory summaries.
 
-## Author
+## Author## Error Handling
+
+The API validates incoming inventory data and returns appropriate
+HTTP status codes.
+
+- `200 OK`: Request completed successfully.
+- `201 Created`: Inventory item created successfully.
+- `400 Bad Request`: Invalid or missing input.
+- `404 Not Found`: Requested inventory item or product was not found.
+- `502 Bad Gateway`: OpenFoodFacts is unavailable or returned an invalid response.
+
+## Testing Strategy
+
+The project uses pytest to test API endpoints, CLI operations,
+input validation, and OpenFoodFacts integration. External API calls
+are mocked in automated tests to make the tests reliable and
+independent of network availability.
 
 Developed as a software engineering summative project.
+
+
+## Error Handling
+
+The API validates incoming inventory data and returns appropriate
+HTTP status codes.
+
+- `200 OK`: Request completed successfully.
+- `201 Created`: Inventory item created successfully.
+- `400 Bad Request`: Invalid or missing input.
+- `404 Not Found`: Requested inventory item or product was not found.
+- `502 Bad Gateway`: OpenFoodFacts is unavailable or returned an invalid response.
+
+## Testing Strategy
+
+The project uses pytest to test API endpoints, CLI operations,
+input validation, and OpenFoodFacts integration. External API calls
+are mocked in automated tests to make the tests reliable and
+independent of network availability.
